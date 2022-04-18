@@ -58,8 +58,8 @@ export const skillData = [
 // List the repo names you want to include (they will be sorted alphabetically), leave the array empty if you want to include everything
 export const filteredProjects = [
   "web3bridge_project1",
-  "web3bridge_project2",
-  "web3bridge_project3"
+  "my-react-portfolio",
+  "Tour"
 ];
 
 // List the card images you want to include in the same order as the repos above (alphabetically)
