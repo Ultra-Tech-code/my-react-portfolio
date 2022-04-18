@@ -5,14 +5,14 @@ const Footer = ({ githubUrl, link, twitter }) => {
     <footer className="d-flex flex-column justify-content-center align-items-center bg-dark">
       <SocialLinks githubUrl={githubUrl} link={link} twitter={twitter} />
       <p className="lead my-3 text-white">
-        &copy; Made with <span>♥️</span> by{" "}
+        &copy;{" "}
         <a
           id="myInfo"
-          href="https://github.com/mshuber1981/github-react-portfolio-template"
+          href="https://github.com/Ultra-tech-code/my-react-portfolio"
           target="_blank"
           rel="noreferrer"
         >
-          Michael Huber
+          Ultra-tech-code
         </a>
       </p>
     </footer>

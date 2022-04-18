@@ -1,34 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, /*useEffect */} from "react";
 // https://react-bootstrap.github.io/components/navbar/
-import { Form, Nav, Navbar } from "react-bootstrap";
+import { /*Form,*/ Nav, Navbar } from "react-bootstrap";
 // https://www.npmjs.com/package/react-scroll
 import { Link } from "react-scroll";
-// https://react-icons.github.io/react-icons/
-import { RiMoonClearFill, RiSunLine } from "react-icons/ri";
+
 
 // Image
 import logo from "../images/logo.svg";
-
-const NavBar = ({ theme, setTheme }) => {
+const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
-  const [themeLogo, setThemeLogo] = useState(<RiMoonClearFill />);
-
-  const updateTheme = () => {
-    theme === "dark" ? setTheme("light") : setTheme("dark");
-    setTimeout(() => {
-      setExpanded(false);
-    }, 500);
-  };
-
-  useEffect(() => {
-    theme === "dark"
-      ? setThemeLogo(<RiMoonClearFill />)
-      : setThemeLogo(<RiSunLine />);
-  }, [theme]);
 
   return (
     <Navbar
-      className={theme}
       bg="dark"
       variant="dark"
       fixed="top"
@@ -128,15 +111,6 @@ const NavBar = ({ theme, setTheme }) => {
             </Link>
           </Nav.Item>
         </Nav>
-        <Form className="d-flex w-100 justify-content-end">
-          <Form.Check
-            id="custom-switch"
-            className="text-white"
-            type="switch"
-            label={themeLogo}
-            onChange={updateTheme}
-          />
-        </Form>
       </Navbar.Collapse>
     </Navbar>
   );

@@ -1,8 +1,6 @@
-export const ProjectsError = ({ theme, error }) => {
-  const newTheme = `${theme} d-flex flex-column min-vh-100 justify-content-center align-items-center`;
-
+export const ProjectsError = ({ error }) => {
   return (
-    <section id="projects" className={newTheme}>
+    <section id="projects" className="app-error d-flex flex-column min-vh-100 justify-content-center align-items-center">
       <div className="container text-center">
         <h2>Projects</h2>
         <hr />
@@ -15,11 +13,9 @@ export const ProjectsError = ({ theme, error }) => {
   );
 };
 
-export const ProjectsLoading = ({ theme }) => {
-  const newTheme = `${theme} d-flex flex-column min-vh-100 justify-content-center align-items-center`;
-
+export const ProjectsLoading = () => {
   return (
-    <section id="projects" className={newTheme}>
+    <section id="projects" className="d-flex flex-column min-vh-100 justify-content-center align-items-center">
       <div className="container text-center">
         <h2>Projects</h2>
         <hr />

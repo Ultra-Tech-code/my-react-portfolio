@@ -3,16 +3,15 @@ import { Link } from "react-scroll";
 // https://react-icons.github.io/react-icons/
 import { FiMail } from "react-icons/fi";
 import { FaChevronCircleUp } from "react-icons/fa";
-import { contactInfo } from "../container/data";
+import { contactInfo } from "../../data";
 
 const mail = `mailto:${contactInfo.email}`;
 const phone = `tel:${contactInfo.phone}`;
 
-const Contact = ({ theme, avatar, name }) => {
-  const newTheme = `${theme} d-flex flex-column justify-content-center`;
+const Contact = ({avatar, name }) => {
 
   return (
-    <section id="contact" className={newTheme}>
+    <section id="contact" className="d-flex flex-column justify-content-center">
       <div className="container text-center">
         <h2>Contact</h2>
         <hr />
@@ -39,7 +38,7 @@ const Contact = ({ theme, avatar, name }) => {
             )}
             {(!contactInfo.email || contactInfo.email === "") &&
             (!contactInfo.phone || contactInfo.phone === "") ? (
-              <a href={contactInfo.mailChimp} target="_blank" rel="noreferrer">
+              <a href={contactInfo.Iyanuoluwa} target="_blank" rel="noreferrer">
                 <button type="button" className="btn btn-secondary btn-lg">
                   <FiMail /> Contact me
                 </button>

@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
 // https://react-bootstrap.github.io/components/cards/#card-columns
-// import { CardColumns, Card } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
-import CardColumns from "react-bootstrap/CardColumns";
-import { filteredProjects, projectData } from "../container/data";
+import { CardColumns, Card } from "react-bootstrap";
+import { filteredProjects, projectData } from "../../data";
 import {
   ProjectsError,
   ProjectsLoading,
-} from "../component/projectsLoadingError";
+} from "../components/projectsLoadingError";
 
 // Image
 import defualtImage from "../images/logo.svg";
 
-const Projects = ({ theme, githubUsername }) => {
+const Projects = ({ githubUsername }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [error, setError] = useState(null);
@@ -62,20 +60,21 @@ const Projects = ({ theme, githubUsername }) => {
       .catch((error) => console.log(error));
   }, [githubUrl]);
 
-  const newTheme = `${theme} d-flex flex-column min-vh-100 justify-content-center align-items-center text-center`;
+  const setStyle = `d-flex flex-column min-vh-100 justify-content-center align-items-center text-center`;
+
 
   if (isLoading) {
-    return <ProjectsLoading theme={theme} />;
+    return <ProjectsLoading />;
   }
 
   if (isError) {
-    return <ProjectsError theme={theme} error={error} />;
+    return <ProjectsError error={error} />;
   }
 
   // There MUST be one image per repo (see projectData.js)
   if (data.length === projectData.length) {
     return (
-      <section id="projects" className={newTheme}>
+      <section id="projects" className={setStyle}>
         <div className="container">
           <h2>Projects</h2>
           <hr />
@@ -109,7 +108,7 @@ const Projects = ({ theme, githubUsername }) => {
   }
 
   return (
-    <section id="projects" className={newTheme}>
+    <section id="projects" className={setStyle}>
       <div className="container">
         <h2>Projects</h2>
         <hr />

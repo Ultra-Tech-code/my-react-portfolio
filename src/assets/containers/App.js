@@ -1,22 +1,17 @@
 import { useState, useEffect } from "react";
-import { githubUsername } from "./container/data";
-import { AppLoading, AppError } from "./component/appLoadingError";
-import About from "./component/About";
-import Skills from "./component/Skills";
-import Projects from "./container/Projects";
-import Contact from "./component/Contact";
-import Footer from "./component/Footer";
+import { githubUsername } from "../../data";
+import { AppLoading, AppError } from "../components/appLoadingError";
+import About from "../components/About";
+import Skills from "../components/Skills";
+import Projects from "./Projects";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
-
-function App() {
+const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  // Change the defualt theme below ("dark" or "light")
-  const [theme, setTheme] = useState("dark");
-
-
   const apiUrl = `https://api.github.com/users/${githubUsername}`;
 
   useEffect(() => {
@@ -41,11 +36,11 @@ function App() {
   }, [apiUrl]);
 
   if (isLoading) {
-    return <AppLoading theme={theme} />;
+    return <AppLoading/>;
   }
 
   if (isError) {
-    return <AppError theme={theme} error={error} />;
+    return <AppError error={error} />;
   }
 
   const homeData = {
@@ -58,20 +53,20 @@ function App() {
   };
 
   return (
-    <div>
-    <About theme={theme} setTheme={setTheme} {...homeData} />
-    <main>
-      <Skills theme={theme} />
-      <Projects theme={theme} githubUsername={githubUsername} />
-      <Contact theme={theme} avatar={homeData.avatar} name={homeData.name} />
-    </main>
-    <Footer
-      githubUrl={homeData.githubUrl}
-      link={homeData.link}
-      twitter={homeData.twitter}
-    />
-  </div>
+    <>
+      <About {...homeData} />
+      <main>
+        <Skills />
+        <Projects githubUsername={githubUsername} />
+        <Contact avatar={homeData.avatar} name={homeData.name} />
+      </main>
+      <Footer
+        githubUrl={homeData.githubUrl}
+        link={homeData.link}
+        twitter={homeData.twitter}
+      />
+    </>
   );
-}
+};
 
 export default App;

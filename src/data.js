@@ -2,23 +2,20 @@
 import {
   FaHtml5,
   FaCss3Alt,
-  FaSass,
-  FaBootstrap,
   FaReact,
-  FaNpm,
   FaGitAlt,
   FaGithubSquare,
 } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 
 // Projects Images (add your images to the /assets/images directory and import below)
-import colors from "../images/colors.svg";
-import react from "../images/logo.svg";
-import notepad from "../images/notepad.svg";
+import project1 from "./assets/images/project1.jpeg";
+import project2 from "./assets/images/project2.jpg";
+import project3 from "./assets/images/project3.jpg";
 
 /* START HERE - add your GitHub username below
  ************************************************************** */
-export const githubUsername = "Ultra-Tech-code";
+export const githubUsername = "Ultra-tech-code";
 
 /* Skills
  ************************************************************** */
@@ -41,31 +38,16 @@ export const skillData = [
   },
   {
     id: 4,
-    skill: <FaSass className="display-4" />,
-    name: "Sass",
-  },
-  {
-    id: 5,
-    skill: <FaBootstrap className="display-4" />,
-    name: "Bootstrap",
-  },
-  {
-    id: 6,
     skill: <FaReact className="display-4" />,
     name: "React",
   },
   {
-    id: 7,
-    skill: <FaNpm className="display-4" />,
-    name: "npm",
-  },
-  {
-    id: 8,
+    id: 5,
     skill: <FaGitAlt className="display-4" />,
     name: "Git",
   },
   {
-    id: 9,
+    id: 6,
     skill: <FaGithubSquare className="display-4" />,
     name: "GitHub",
   },
@@ -75,22 +57,22 @@ export const skillData = [
  ************************************************************** */
 // List the repo names you want to include (they will be sorted alphabetically), leave the array empty if you want to include everything
 export const filteredProjects = [
-  "Background-Generator",
-  "github-react-portfolio-template",
-  "notepad",
+  "web3bridge_project1",
+  "web3bridge_project2",
+  "web3bridge_project3"
 ];
 
 // List the card images you want to include in the same order as the repos above (alphabetically)
 // There MUST be one image per repo above or the defualt image will be applied
 export const projectData = [
   {
-    image: colors,
+    image: project1,
   },
   {
-    image: react,
+    image: project2,
   },
   {
-    image: notepad,
+    image: project3,
   },
 ];
 
@@ -102,3 +84,6 @@ export const contactInfo = {
   email: "Hizick27@gmail.com",
   phone: "+2349030769242",
 };
+
+
+

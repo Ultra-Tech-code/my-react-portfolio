@@ -2,14 +2,13 @@
 import { Link } from "react-scroll";
 // https://react-icons.github.io/react-icons/
 import { FaChevronCircleDown } from "react-icons/fa";
-import NavBar from "../container/NavBar";
+import NavBar from "../containers/NavBar";
 import SocialLinks from "./SocialLinks";
 
 // Image
 import logo from "../images/logo.svg";
 
-const About = ({ theme, setTheme, githubUrl, name, link, bio, twitter }) => {
-  const newTheme = `${theme} d-flex flex-column min-vh-100 justify-content-center`;
+const About = ({githubUrl, name, link, bio, twitter }) => {
 
   const socialData = {
     githubUrl: githubUrl,
@@ -18,8 +17,8 @@ const About = ({ theme, setTheme, githubUrl, name, link, bio, twitter }) => {
   };
 
   return (
-    <header id="about" className={newTheme}>
-      <NavBar theme={theme} setTheme={setTheme} />
+    <header id="about" className="d-flex flex-column min-vh-100 justify-content-center" >
+      <NavBar />
       <div className="container text-center">
         <img
           className="logo spin img-fluid"
@@ -28,7 +27,7 @@ const About = ({ theme, setTheme, githubUrl, name, link, bio, twitter }) => {
           height="45%"
           width="45%"
         />
-        <h1>{name}</h1>
+        <h2>{name}</h2>
         <hr />
         <p>{bio}</p>
         <SocialLinks {...socialData} />

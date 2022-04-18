@@ -1,10 +1,8 @@
-import { skillData } from "../container/data";
+import { skillData } from "../../data";
 
-const Skills = ({ theme }) => {
-  const newTheme = `${theme} d-flex flex-column min-vh-100 justify-content-center`;
-
+const Skills = () => {
   return (
-    <section id="skills" className={newTheme}>
+    <section id="skills" className="d-flex flex-column min-vh-100 justify-content-center">
       <div className="container text-center">
         <h2>Skills</h2>
         <hr />
